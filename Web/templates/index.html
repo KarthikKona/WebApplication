@@ -1,0 +1,38 @@
+{% extends 'common.html' %}
+{% block common %}
+    <div class="container">
+        <div class="search-wrapper row">
+            <input id="search" name="name" placeholder="Search" class="col s11">
+            <a href="#"><i class="material-icons col s1" style="padding-top: 2%">search</i></a>
+            <div class="search-results"></div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Owner</th>
+                        <th>Employee-Size</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    {% for comp in companies %}
+                        <tr>
+                            <td>{{ comp.name }}</td>
+                            <td>{{ comp.email }}</td>
+                            <td>{{ comp.contact }}</td>
+                            <td>{{ comp.address }}</td>
+                            <td>{{ comp.owner }}</td>
+                            <td>{{ comp.employee_size }}</td>
+                            <td><a href="{% url 'company' %}?id={{ comp.id }}">Yes</a></td>
+                            <td><a href="{% url 'delete' %}?id={{ comp.id }}"><i class="material-icons">delete</i></a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

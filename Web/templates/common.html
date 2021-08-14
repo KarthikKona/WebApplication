@@ -1,0 +1,31 @@
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Company Details</title>
+</head>
+
+<body>
+    <nav class="#1565c0 blue darken-3">
+        <div class="nav-wrapper">
+          <a href="{% url 'main' %}" class="brand-logo"><i class="material-icons" style="font-size: 36px">home</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'owner' %}">Create-Owner</a></li>
+            <li><a href="{% url 'company' %}">Create-Company</a></li>
+          </ul>
+        </div>
+    </nav>
+    {% block common %}
+    {% endblock %}
+
+<script>
+    M.AutoInit();
+</script>
+</body>
+</html>

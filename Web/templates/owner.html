@@ -1,0 +1,20 @@
+{% extends 'common.html' %}
+{% block common %}
+    <div class="container">
+        <form action="{% url 'save-owner' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12">
+                    <div class="card-panel blue-grey lighten-4 center-align">Create Owner</div>
+                </div>
+            </div>
+            {{ form.as_p }}
+            <div class="row">
+                <p class="center-align">
+                    <button type="submit" class="btn indigo waves-effect waves-light">Register</button>
+                    <a class="btn indigo waves-effect waves-light" href="{% url 'main' %}">Cancel</a>
+                </p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
